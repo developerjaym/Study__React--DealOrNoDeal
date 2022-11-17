@@ -1,0 +1,14 @@
+.guidance {
+    text-align: center;
+    font-size: large;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.reset-link {
+    color: white;
+    font-size: medium;
+}

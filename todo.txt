@@ -1,0 +1,6 @@
+1. git
+2. styling fixes
+    a. icons
+    b. 
+3. code cleanup
+    a.   

@@ -1,0 +1,20 @@
+.suitcase-list {
+    display: grid;
+    grid-template-columns: repeat(42, 1fr);
+    row-gap: 0.125rem;
+    column-gap: 0.125rem;
+    background-color: black;
+}
+
+.suitcase:nth-child(-n + 26) {
+    grid-column: span 7;
+}
+
+.suitcase:nth-last-child(-n + 20) {
+    grid-column: span 6;
+}
+
+.suitcase:nth-last-child(-n + 6) {
+    grid-column: span 7;
+}
+

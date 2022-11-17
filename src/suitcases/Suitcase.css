@@ -1,0 +1,24 @@
+.suitcase {
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border-style: groove;
+    cursor: pointer;
+    font-size: 2.75vmin;
+}
+
+
+.suitcase--closed {
+    background-color: gainsboro;
+}
+
+.suitcase--open {
+    background-color: lightgreen;
+}
+
+.suitcase--first-choice {
+    background-color: gold;
+}

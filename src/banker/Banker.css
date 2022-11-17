@@ -1,0 +1,66 @@
+.banker {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: radial-gradient(goldenrod, rgb(179, 133, 16));
+    padding: 1rem;
+}
+
+.banker-offer__menu {
+    margin-left: 0;
+    padding-left: 0;
+    display: grid;
+    column-gap: 0.25rem;
+    grid-template-columns: 6vmax 6vmax;
+    place-items: center;
+    margin: 0.25rem;
+}
+
+.banker__header {
+    font-size: xx-large;
+    margin: 0;
+    padding: 0.25rem 2rem 0.25rem 2rem;
+    text-align: center;
+    background: radial-gradient(silver, #9fadb6);
+    box-shadow: 1px 2px 3px 2px #93a0a88a;
+    text-transform: uppercase;
+}
+
+.banker__offer {
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    height: 1.5rem;
+    padding: 0.5rem;
+}
+
+.menu-button{
+    border-style: groove;
+    border-radius: 100%;
+    width: 5vmax;
+    height: 5vmax;
+    font-size: large;
+    box-shadow: 2px 2px 5px 1px #000000bf;
+    transition: width 0.25s;
+    cursor: pointer;
+} 
+
+.menu-button:active {
+    height: 4.5vmax;
+    width: 4.5vmax;
+    margin: 0.25vmax;
+    box-shadow: 1px 1px 2px 0px #000000bf;
+    transition: width 0.25s;
+
+}
+
+
+.menu-button--positive {
+    background-color: darkgreen;
+
+}
+
+.menu-button--negative {
+    background-color: darkred;
+}
