@@ -3,7 +3,8 @@ import format from "../utility/NumberFormatter"
 
 
 export default function Banker({ state, amounts, onOfferResponse, over }) {
-  const offerAmount = amounts.length === 26 ? 5000 : amounts.length === 1 ? amounts[0] : Math.ceil((amounts.reduce((pre, cur) => pre + cur, 0.00) / amounts.length) * 0.75);
+  const randomCoefficient = 0.9 - (Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random())
+  const offerAmount = amounts.length === 26 ? 5000 : amounts.length === 1 ? amounts[0] : Math.ceil((amounts.reduce((pre, cur) => pre + cur, 0.00) / amounts.length) * randomCoefficient);
 
   const onYes = e => {
     onOfferResponse({

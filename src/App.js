@@ -88,6 +88,7 @@ function App() {
         bankerOffers={game.bankerOffers}
         roundData={game.roundData}
         rules={RULES}
+        onRestart={() => setGame(initialStateSupplier())}
       />
 
       <SuitcaseList
