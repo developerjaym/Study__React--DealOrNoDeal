@@ -4,7 +4,7 @@ import format from "../utility/NumberFormatter"
 export default function Guidance({state, bankerOffers, rules, roundData, onRestart}) {
    return (<div className="guidance">
         {state === "PONDERING_OFFER"
-          ? `The Banker's calling. Answer the phone. ⬊`
+          ? `The Banker's calling. Answer the phone. ☟`
           : state === "OVER"
           ? (<>{`
             You won
