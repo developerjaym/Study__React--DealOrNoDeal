@@ -13,15 +13,14 @@
 
 
 .suitcase--closed {
-    background-color: gainsboro;
-    background: radial-gradient(silver, #9fadb6);
-    ;
+    background: radial-gradient(silver, #8a99a3);
 }
 
 .suitcase--open {
-    background-color: lightgreen;
+    background: radial-gradient( lightgreen 0%, #74bd8d 75%,    #68aa7e 100%  );
 }
 
 .suitcase--first-choice {
-    background-color: gold;
+    background: radial-gradient(gold, goldenrod);
+    box-shadow: 0px 0px 5px 1px goldenrod;
 }

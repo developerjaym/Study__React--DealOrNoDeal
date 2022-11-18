@@ -4,9 +4,12 @@
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   grid-area: area;
   z-index: 1;
+
+  background-color: black;
 }
 
 

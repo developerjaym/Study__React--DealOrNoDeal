@@ -4,6 +4,9 @@
     row-gap: 1px;
     column-gap: 1px;
     background-color: black;
+
+    width: 100%;
+    max-width: 66rem;
 }
 
 .suitcase:nth-child(-n + 26) {
