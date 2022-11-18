@@ -4,7 +4,7 @@ import format from "../utility/NumberFormatter"
 export default function Guidance({state, bankerOffers, rules, roundData, onRestart}) {
    return (<div className="guidance">
         {state === "PONDERING_OFFER"
-          ? `Accept ${roundData.number !== 7 ? 'or Decline' : ''}`
+          ? `The Banker's calling. Answer the phone. ⬊`
           : state === "OVER"
           ? (<>{`
             You won
@@ -13,6 +13,6 @@ export default function Guidance({state, bankerOffers, rules, roundData, onResta
           : `Choose ${
               rules[Number(roundData.number)].canChoose -
               roundData.suitcasesChosen
-            } case(s)`}
+            } box(es)`}
       </div>)
 }

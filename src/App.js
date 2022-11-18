@@ -3,12 +3,15 @@ import "./App.css";
 import Banker from "./banker/Banker";
 import Guidance from "./guidance/Guidance";
 import Header from "./header/Header";
+import Phone from "./phone/Phone";
 import SuitcaseList from "./suitcases/SuitcaseList";
 import initialStateSupplier from "./utility/InitialStateSupplier";
 import RULES from "./utility/Rules";
+import SOUND from "./phone/phone.wav";
 
 function App() {
   const [game, setGame] = useState(initialStateSupplier());
+  const [bankerVisible, setBankerVisible] = useState(false);
 
   const onSuitcaseChosen = (num) => {
     const suitcase = game.suitcases.find((suitcase) => suitcase.number === num);
@@ -34,6 +37,7 @@ function App() {
     const bankerOffers = [...game.bankerOffers];
     if (suitcasesChosen === RULES[Number(game.roundData.number)].canChoose) {
       state = "PONDERING_OFFER";
+      new Audio(SOUND).play()
     }
     setGame({
       ...game,
@@ -48,6 +52,7 @@ function App() {
   };
 
   const onOfferResponse = (offer) => {
+    setBankerVisible(false);
     const bankerOffers = [...game.bankerOffers, offer];
     if (offer.accepted) {
       setGame({
@@ -70,33 +75,39 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <>
+      <div className="App">
+        <Header />
+        <SuitcaseList
+          over={game.state === "OVER" || game.roundData.number === 8}
+          suitcases={game.suitcases}
+          onSuitcaseChosen={onSuitcaseChosen}
+        />
 
-      <Banker
-        over={game.state === "OVER" || game.roundData.number === 7}
-        state={game.state}
-        amounts={game.suitcases
-          .filter((suitcase) => !suitcase.open || suitcase.firstChoice)
-          .map((suitcase) => suitcase.amount)}
-        onOfferResponse={onOfferResponse}
-      />
-      <div className="app__audience"></div>
+        <Guidance
+          state={game.state}
+          bankerOffers={game.bankerOffers}
+          roundData={game.roundData}
+          rules={RULES}
+          onRestart={() => setGame(initialStateSupplier())}
+        />
 
-      <Guidance
-        state={game.state}
-        bankerOffers={game.bankerOffers}
-        roundData={game.roundData}
-        rules={RULES}
-        onRestart={() => setGame(initialStateSupplier())}
-      />
-
-      <SuitcaseList
-        over={game.state === "OVER" || game.roundData.number === 8}
-        suitcases={game.suitcases}
-        onSuitcaseChosen={onSuitcaseChosen}
-      />
-    </div>
+        <Phone
+          state={game.state}
+          onPhoneAnswered={() => setBankerVisible(true)}
+        />
+      </div>
+      {bankerVisible ? (
+        <Banker
+          over={game.state === "OVER" || game.roundData.number === 7}
+          state={game.state}
+          amounts={game.suitcases
+            .filter((suitcase) => !suitcase.open || suitcase.firstChoice)
+            .map((suitcase) => suitcase.amount)}
+          onOfferResponse={onOfferResponse}
+        />
+      ) : null}
+    </>
   );
 }
 

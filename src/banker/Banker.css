@@ -1,10 +1,18 @@
 .banker {
+    grid-area: area;
+    z-index: 2;
+    height: max-content;
+    width: max-content;
+    place-self: center;
+    border-radius: 1rem;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
     background: radial-gradient(goldenrod, rgb(179, 133, 16));
     padding: 1rem;
+    row-gap: 1rem;
 }
 
 .banker-offer__menu {
@@ -12,7 +20,7 @@
     padding-left: 0;
     display: grid;
     column-gap: 0.25rem;
-    grid-template-columns: 6vmax 6vmax;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
     margin: 0.25rem;
 }
@@ -27,12 +35,25 @@
     text-transform: uppercase;
 }
 
-.banker__offer {
-    font-size: large;
+.banker__offer-amount {
+    font-size: xx-large;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    height: 1.5rem;
-    padding: 0.5rem;
+    border-width: 1px 0 1px 0;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+}
+
+.banker__offer-header {
+    font-size: medium;
+    text-align: center;
+}
+
+.banker__offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .menu-button{

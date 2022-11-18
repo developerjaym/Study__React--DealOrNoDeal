@@ -1,8 +1,8 @@
 .suitcase-list {
     display: grid;
     grid-template-columns: repeat(42, 1fr);
-    row-gap: 0.125rem;
-    column-gap: 0.125rem;
+    row-gap: 1px;
+    column-gap: 1px;
     background-color: black;
 }
 
