@@ -36,7 +36,7 @@ export default function Banker({ state, amounts, onOfferResponse, over }) {
     });
   };
   return (
-    <div className="banker">
+    <div className="banker expand">
       <h2 className="banker__header">BANKER</h2>
       <div className="banker__offer">
       <div className="banker__offer-header">

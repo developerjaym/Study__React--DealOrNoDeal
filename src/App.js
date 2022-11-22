@@ -8,6 +8,7 @@ import SuitcaseList from "./suitcases/SuitcaseList";
 import initialStateSupplier from "./utility/InitialStateSupplier";
 import RULES from "./utility/Rules";
 import SOUND from "./phone/phone.wav";
+import Share from "./share/Share";
 
 function App() {
   const [game, setGame] = useState(initialStateSupplier());
@@ -37,7 +38,7 @@ function App() {
     const bankerOffers = [...game.bankerOffers];
     if (suitcasesChosen === RULES[Number(game.roundData.number)].canChoose) {
       state = "PONDERING_OFFER";
-      new Audio(SOUND).play()
+      new Audio(SOUND).play();
     }
     setGame({
       ...game,
@@ -76,7 +77,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div className="App slide-in">
         <Header />
         <SuitcaseList
           over={game.state === "OVER" || game.roundData.number === 8}
@@ -91,13 +92,16 @@ function App() {
           rules={RULES}
           onRestart={() => setGame(initialStateSupplier())}
         />
-
-        <Phone
-          state={game.state}
-          onPhoneAnswered={() => setBankerVisible(true)}
-        />
+        {game.state !== "OVER" ? (
+          <Phone
+            state={game.state}
+            onPhoneAnswered={() => setBankerVisible(true)}
+          />
+        ) : (
+          <Share game={game} />
+        )}
       </div>
-      {bankerVisible ? (
+      {bankerVisible & (game.state !== "OVER") ? (
         <Banker
           over={game.state === "OVER" || game.roundData.number === 7}
           state={game.state}

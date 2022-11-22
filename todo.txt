@@ -1,7 +1,4 @@
 1. I think there's a rule about being able to switch cases at the end
     a. Actually, I should probably just figure out what the rules really are
-2. styling fixes
-    a. icons
-    b. 
-3. code cleanup
-    a.   
+2. helpful instructions should be displayed to those who don't know the stupid game
+3. 'share' button should be displayed at the end

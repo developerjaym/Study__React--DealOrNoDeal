@@ -1,0 +1,14 @@
+.share-button {
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.share-button:active {
+    transform: scale(0.75, 0.75);
+}

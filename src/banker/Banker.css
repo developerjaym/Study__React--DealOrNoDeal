@@ -73,6 +73,10 @@
     box-shadow: 1px 1px #000000bf;
 }
 
+.menu-button:disabled {
+    display: none;
+}
+
 
 .menu-button--positive {
     background: radial-gradient(darkgreen, rgb(2, 71, 2));

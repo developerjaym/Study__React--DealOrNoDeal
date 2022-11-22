@@ -7,7 +7,7 @@ export default function Suitcase({ suitcase, onSuitcaseChosen, over }) {
       id={`suitcase${suitcase.number}`}
       className={`suitcase ${
         suitcase.firstChoice ? "suitcase--first-choice" : ""
-      } ${suitcase.open ? "suitcase--open" : "suitcase--closed"}` } onClick={(e) => onSuitcaseChosen(suitcase.number)}
+      } ${suitcase.open ? "suitcase--open expand" : "suitcase--closed"}` } onClick={(e) => onSuitcaseChosen(suitcase.number)}
     >
         {(suitcase.open && !suitcase.firstChoice) || over
           ? `$${format(suitcase.amount)}`

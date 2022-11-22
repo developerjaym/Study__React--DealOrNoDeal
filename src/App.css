@@ -12,12 +12,18 @@
   background-color: black;
 }
 
-
-
 #root {
-    display: grid;
-    grid-template-areas: "area";
-    max-width: 100vw;
-    max-height: 100vh;
-  }
+  display: grid;
+  grid-template-areas: "area";
+  max-width: 100vw;
+  max-height: 100vh;
+}
 
+.share-area {
+  flex-grow: 2;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

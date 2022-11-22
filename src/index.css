@@ -7,6 +7,7 @@ body {
   font-family: GeoSansLight, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
 }
 
 * {
@@ -14,4 +15,33 @@ body {
   font-family: GeoSansLight, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .expand {
+      animation: expand 0.1s linear;
+  }
+  .slide-in {
+    animation: slide-in 0.25s linear;
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0)
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100vw)
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
